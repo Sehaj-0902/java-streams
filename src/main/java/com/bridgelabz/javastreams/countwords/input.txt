@@ -1,0 +1,9 @@
+FileReader:
+FileReader is a character-stream class used to read text files.
+It reads characters directly from the file, which can be inefficient for large files due to frequent disk access.
+It lacks buffering, so each read operation often involves a physical disk read.
+
+BufferedReader:
+BufferedReader is a character-stream class that adds buffering to a character input stream, such as a FileReader.
+It reads a larger chunk of data from the file into an internal buffer, reducing the number of disk access operations.
+This buffering significantly improves performance, especially when reading large text files, by minimizing the overhead of disk I/O.
