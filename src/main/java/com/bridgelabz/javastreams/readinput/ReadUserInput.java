@@ -7,10 +7,11 @@ import java.io.InputStreamReader;
 
 public class ReadUserInput {
     public static void main(String[] args) {
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            FileWriter writer = null;
+        String outputFile = "C:\\Users\\DELL\\Desktop\\bridgelabz-workspace\\java-streams\\src\\main\\java\\com\\bridgelabz\\javastreams\\readinput\\userInformation.txt";
 
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+             FileWriter writer = new FileWriter(outputFile);
+             ){
             System.out.print("Enter your name: ");
             String name = reader.readLine();
 
@@ -20,9 +21,6 @@ public class ReadUserInput {
             System.out.print("Enter your favorite programming language: ");
             String language = reader.readLine();
 
-            String outputFile = "C:\\Users\\DELL\\Desktop\\bridgelabz-workspace\\java-streams\\src\\main\\java\\com\\bridgelabz\\javastreams\\readinput\\userInformation.txt";
-
-            writer = new FileWriter(outputFile);
             writer.write("Name: " + name + "\n");
             writer.write("Age: " + age + "\n");
             writer.write("Favorite Language: " + language + "\n");
